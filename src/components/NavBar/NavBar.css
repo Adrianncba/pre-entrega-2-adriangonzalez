@@ -1,0 +1,168 @@
+/* Barra de navegación con Flexbox */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Los elementos se separan por espacio entre ellos */
+  align-items: center; /* Alineación vertical */
+  background-color: #000; /* Fondo negro */
+  padding: 20px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative; /* Cambiado a relative para dispositivos pequeños y tabletas */
+  top: 0; /* Se asegura de que esté en la parte superior */
+  left: 0;
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  z-index: 1000; /* Hace que el navbar esté por encima de otros elementos */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
+/* Media Query para escritorio (pantallas mayores a 1024px) */
+@media (min-width: 1025px) {
+  .navbar {
+    position: fixed; /* Fijo solo en pantallas grandes */
+    padding: 20px 40px; /* Mantener un padding más grande en escritorio */
+  }
+
+  .navbar .brand-title {
+    font-size: 28px; /* Título grande en escritorio */
+  }
+
+  .links a {
+    font-size: 18px; /* Aumentar tamaño de los enlaces en desktop */
+  }
+}
+
+/* Estilo para el título (Link) */
+.navbar .brand-title {
+  color: #fff; /* Título en blanco */
+  font-size: 28px;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; /* Efecto neón rojo */
+  margin: 0;
+  text-decoration: none; /* Para quitar el subrayado del Link */
+  display: flex;
+  align-items: center;
+}
+
+/* Si la marca tiene una imagen (enlace) */
+.navbar .brand-title img {
+  width: 6rem; /* Reducir el tamaño de la imagen */
+  height: auto;
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+/* Contenedor de enlaces */
+.links {
+  display: flex;
+  gap: 20px;
+  flex: 1; /* Asegura que ocupe todo el espacio disponible */
+  justify-content: center; /* Centra los enlaces en el navbar */
+}
+
+/* Estilo de los enlaces */
+.links a {
+  color: #ccc; /* Texto gris suave */
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: 'Arial', sans-serif;
+  text-decoration: none;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+/* Efecto hover en los enlaces */
+.links a:hover {
+  color: #fff; /* Cambia a blanco al pasar el ratón */
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; /* Efecto neón rojo */
+}
+
+/* Subrayado rojo neón */
+.links a:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ff0000; /* Rojo neón */
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.links a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Estilo para el carrito */
+.cart-widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px; /* Espacio extra a la izquierda para evitar que se pegue al borde */
+}
+
+/* Si tienes un ícono SVG en CartWidget */
+.cart-widget svg {
+  color: #ff0000; /* Neón rojo para el ícono */
+  font-size: 30px;
+  transition: color 0.3s ease;
+}
+
+.cart-widget svg:hover {
+  color: #fff; /* Cambio a blanco al hacer hover */
+}
+
+/* Media Query para dispositivos pequeños (móviles) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column; /* Los elementos se apilan en columna */
+    padding: 15px; /* Reducir el padding */
+  }
+
+  .navbar .brand-title {
+    font-size: 24px; /* Reducir el tamaño del título */
+    text-align: center; /* Centrar el título */
+  }
+
+  .links {
+    flex-direction: column; /* Los enlaces se apilan verticalmente */
+    gap: 10px; /* Reducir el espacio entre enlaces */
+    margin-top: 15px; /* Añadir un margen superior */
+    align-items: center; /* Centrar los enlaces */
+  }
+
+  .cart-widget {
+    margin-top: 15px; /* Añadir un margen superior */
+    justify-content: center; /* Asegurar que el carrito esté centrado */
+  }
+
+  .links a {
+    font-size: 14px; /* Reducir el tamaño de fuente en móvil */
+  }
+}
+
+/* Media Query para tabletas (pantallas entre 600px y 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .navbar {
+    flex-direction: row; /* Los elementos se alinean en fila */
+    padding: 20px; /* Mantener el padding en tabletas */
+  }
+
+  .navbar .brand-title {
+    font-size: 26px; /* Ajustar el tamaño del título */
+  }
+
+  .links {
+    flex-direction: row; /* Los enlaces se mantienen en fila */
+    gap: 15px; /* Reducir un poco el espacio entre los enlaces */
+  }
+
+  .cart-widget {
+    margin-left: 20px; /* Añadir un margen para no dejarlo pegado al borde */
+  }
+
+  .links a {
+    font-size: 15px; /* Ajustar el tamaño de fuente en tabletas */
+  }
+}

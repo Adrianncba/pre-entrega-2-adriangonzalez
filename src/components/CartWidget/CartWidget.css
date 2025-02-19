@@ -1,0 +1,59 @@
+/* Estilos para el carrito */
+.cart-widget {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #00f7ff;
+    /* Azul neón */
+}
+
+.cart-widget img {
+    width: 3rem;
+    height: 3rem;
+
+    /* Efecto de neón alrededor de la imagen */
+}
+
+.cart-widget p {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+    /* Efecto de neón */
+}
+
+/* Media Query para Tablets (Entre 600px y 1024px) */
+@media screen and (max-width: 1024px) {}
+
+.cart-widget img {
+    width: 2.5rem;
+    height: 2.5rem;
+    /* Ajustar tamaño de la imagen */
+}
+
+.cart-widget p {
+    font-size: 18px;
+    /* Reducir tamaño del texto */
+}
+.cart-widget span{
+    color: whitesmoke;
+    background-color: red;
+    padding: 0.2rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+
+/* Media Query para Móviles (Menos de 600px) */
+@media screen and (max-width: 600px) {
+    .cart-widget img {
+        width: 3rem;
+        height: 3rem;
+        /* Reducir tamaño de la imagen */
+    }
+
+    .cart-widget p {
+        font-size: 1rem;
+        /* Reducir tamaño del texto */
+    }
+}

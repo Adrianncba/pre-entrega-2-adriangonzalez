@@ -1,0 +1,35 @@
+/* Estilos Generales de la Lista de Productos */
+.item-list-container {
+    padding: 20px;
+    margin-top: 0;
+    background-color: #000; /* Fondo negro */
+    color: #fff;
+  }
+  
+  .item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrar los elementos */
+    gap: 20px; /* Espacio entre los items */
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 600px) {
+    .item-list-container{
+        margin-top: 0;
+    }
+    .item-list {
+      flex-direction: column; /* Apilar los productos en pantallas pequeñas */
+      gap: 10px;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .item-list-container {
+        margin-top: 10rem;    
+    }
+    .item-list {
+      flex-direction: row; /* Alinearlos en fila en pantallas grandes */
+    }
+  }
+  

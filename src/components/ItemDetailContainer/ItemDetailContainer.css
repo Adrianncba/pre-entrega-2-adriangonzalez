@@ -1,0 +1,118 @@
+/* Estilos para el contenedor de detalles del producto */
+.item-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #000; /* Fondo negro */
+  color: #fff;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: #222;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px; /* Reducir el ancho máximo de la carta */
+  padding: 2rem; /* Reducir el padding dentro de la carta */
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5); /* Sombra neón roja */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 5rem; /* Reducir el margen superior para acercar la carta */
+}
+
+/* Estilos para los botones de cantidad y agregar al carrito */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.quantity-controls button {
+  background-color: #222;
+  color: #fff;
+  border: 2px solid #ff0000; /* Borde rojo */
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quantity-controls button:hover {
+  background-color: #ff0000; /* Fondo rojo en hover */
+  color: #222;
+  box-shadow: 0 0 10px #ff0000; /* Efecto de neón */
+}
+
+.quantity-controls p {
+  font-size: 24px;
+  margin: 0 10px;
+  color: #fff;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; /* Efecto neón rojo */
+}
+
+.card-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff0000; /* Asegúrate de que el precio esté en rojo */
+}
+
+/* Estilo para el botón "Agregar al carrito" */
+.add-to-cart-btn {
+  background-color: #ff0000;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 25px;
+  font-size: 18px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #cc0000; /* Fondo más oscuro en hover */
+}
+
+/* Estilo en pantallas pequeñas */
+@media (max-width: 600px) {
+  .card {
+    margin-top: 0;
+    width: 90%; /* Ampliar el card en pantallas pequeñas */
+  }
+
+  .card-img {
+    height: 300px; /* Reducir la altura de la imagen en móviles */
+  }
+
+  .card-title {
+    font-size: 22px;
+  }
+
+  .card-price {
+    font-size: 18px;
+  }
+
+  .card-description {
+    font-size: 14px;
+  }
+
+  .quantity-controls button {
+    font-size: 16px; /* Ajustar tamaño de los botones */
+  }
+
+  .quantity-controls p {
+    font-size: 20px; /* Ajustar tamaño del número */
+  }
+
+  .add-to-cart-btn {
+    font-size: 16px; /* Ajustar tamaño del botón */
+    padding: 12px 20px;
+  }
+}
