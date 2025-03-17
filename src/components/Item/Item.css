@@ -1,61 +1,88 @@
-/* Estilo para cada producto */
+/* Contenedor general para los items */
+.item-list {
+  padding: 2rem;
+  display: flex;
+  gap: 0.5rem; /* Menos espacio entre las cartas */
+  justify-items: center; /* Centra las cartas */
+  align-items: start; /* Alinea las cartas desde la parte superior */
+  transition: all 0.3s ease;
+}
+
+/* Estilo para cada item (carta) */
 .item {
-  background-color: #1f1f1f;
-  color: #fff;
-  width: 200px; /* Tamaño fijo para cada item */
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out;
+  background-color: #000; /* Fondo negro */
+  border-radius: 10px; /* Bordes redondeados */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end; /* Organiza el contenido hacia abajo */
+  width: 100%;
+  max-width: 250px; /* Limitar el tamaño máximo */
+  height: 300px; /* Altura fija para la carta, ajustada para que no sea tan alta */
+  padding: 3rem;
+  position: relative;
+  overflow: hidden; /* Evitar que el contenido se desborde */
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); /* Sombra de neón */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto; /* Asegura que las cartas estén centradas */
 }
 
+/* Sombra extendida para cubrir toda la carta */
+.item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); /* Sombra de neón */
+  border-radius: 10px; /* Bordes redondeados para la sombra */
+}
+
+/* Efecto de hover para las cartas */
 .item:hover {
-  transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
-  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.7); /* Sombra neón roja */
+  transform: translateY(-5px); /* Leve movimiento al pasar el mouse */
+  box-shadow: 0 0 25px rgba(255, 0, 0, 1); /* Sombra más intensa al pasar el mouse */
 }
 
+/* Estilo de la imagen del producto */
 .item-image {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 200px; /* Altura fija para la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra bien el área */
+  border-radius: 10px; /* Bordes redondeados para la imagen */
+  margin-bottom: 1rem; /* Espacio entre la imagen y el texto */
 }
 
-h2 {
-  text-align: center;
-  font-size: 18px;
-  color: #fff;
-  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; /* Efecto neón rojo */
-  margin: 10px 0;
+/* Estilo para el título del producto */
+.item h2 {
+  font-size: 1.4rem; /* Tamaño adecuado para el título */
+  color: #fff; /* Color blanco para el texto */
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; /* Efecto neón en el texto */
+  margin: 0.5rem 0;
+  text-align: center; /* Centra el título */
+  flex-grow: 1;
+  flex-shrink: 0;
 }
 
+/* Estilo del enlace "Ver detalles" */
 .item a {
-  text-align: center;
-  display: block;
-  background-color: #ff0000; /* Fondo rojo */
-  color: #fff;
-  padding: 10px 0;
+  color: #ff0000; /* Texto rojo neón */
   text-decoration: none;
+  font-size: 1rem;
+  text-align: center;
+  display: inline-block;
+  text-shadow: 0 0 10px #ff0000; /* Efecto neón */
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ff0000; /* Borde sutil */
   border-radius: 5px;
-  margin: 10px;
-  transition: background-color 0.3s ease;
 }
 
+/* Efecto hover para el enlace */
 .item a:hover {
-  background-color: #cc0000; /* Fondo más oscuro en hover */
-}
-
-@media (max-width: 600px) {
-  .item {
-    width: 90%; /* Hacer los items más grandes en pantallas móviles */
-  }
-}
-
-@media (min-width: 1025px) {
-  .item {
-    width: 220px; /* Hacer los items un poco más grandes en escritorio */
-  }
+  color: #fff; /* Cambia a blanco cuando se pasa el ratón */
+  text-shadow: 0 0 20px #fff, 0 0 30px #ff0000; /* Efecto de neón más intenso */
+  border-color: #fff; /* Cambia el borde a blanco */
 }

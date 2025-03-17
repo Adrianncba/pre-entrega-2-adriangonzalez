@@ -2,7 +2,6 @@
 .item-list-container {
     padding: 20px;
     margin-top: 0;
-    background-color: #000; /* Fondo negro */
     color: #fff;
   }
   
@@ -15,9 +14,6 @@
   }
   
   @media (max-width: 600px) {
-    .item-list-container{
-        margin-top: 0;
-    }
     .item-list {
       flex-direction: column; /* Apilar los productos en pantallas pequeñas */
       gap: 10px;
@@ -25,9 +21,7 @@
   }
   
   @media (min-width: 1025px) {
-    .item-list-container {
-        margin-top: 10rem;    
-    }
+ 
     .item-list {
       flex-direction: row; /* Alinearlos en fila en pantallas grandes */
     }

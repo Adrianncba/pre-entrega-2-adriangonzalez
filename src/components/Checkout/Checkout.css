@@ -1,0 +1,126 @@
+/* Contenedor principal del Checkout */
+.checkout-container {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    text-align: center; /* Centrado de texto */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.8); /* Sombra de neón */
+    max-width: 600px; /* Limitar el tamaño máximo */
+    margin: 50px auto; /* Centrar en la página */
+    position: relative;
+  }
+  
+  /* Sombra de neón en el contenedor */
+  .checkout-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.8); /* Sombra de neón */
+    border-radius: 10px; /* Bordes redondeados para la sombra */
+  }
+  
+  /* Título */
+  .checkout-container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff0000; /* Rojo neón */
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; /* Efecto neón */
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Texto que contiene el ID de la orden */
+  .checkout-container p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: #fff; /* Blanco */
+    text-shadow: 0 0 10px #ff0000; /* Efecto neón rojo */
+  }
+  
+  /* Estilo del link */
+  .checkout-container a {
+    color: #ff0000; /* Color rojo neón */
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff0000; /* Efecto neón */
+    border: 2px solid #ff0000; /* Borde rojo */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Efecto hover para el enlace */
+  .checkout-container a:hover {
+    background-color: #ff0000; /* Fondo rojo al pasar el mouse */
+    color: #fff; /* Texto blanco */
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Efecto de neón */
+  }
+  
+  /* Media Queries para adaptaciones */
+  
+  /* Para pantallas de 600px o más (Tabletas en orientación vertical) */
+  @media (min-width: 600px) {
+    .checkout-container {
+      padding: 3rem; /* Más espacio en tablets */
+      max-width: 700px; /* Aumentamos el tamaño máximo */
+    }
+  
+    .checkout-container h1 {
+      font-size: 3rem; /* Título más grande */
+    }
+  
+    .checkout-container p {
+      font-size: 1.3rem; /* Texto más grande */
+    }
+  
+    .checkout-container a {
+      font-size: 1.4rem; /* Enlace más grande */
+    }
+  }
+  
+  /* Para pantallas de 900px o más (Tabletas en orientación horizontal y escritorios pequeños) */
+  @media (min-width: 900px) {
+    .checkout-container {
+      max-width: 800px; /* Más grande en pantallas grandes */
+      padding: 4rem; /* Más relleno en pantallas grandes */
+    }
+  
+    .checkout-container h1 {
+      font-size: 3.5rem; /* Aumentamos el tamaño del título */
+    }
+  
+    .checkout-container p {
+      font-size: 1.5rem; /* Texto más grande */
+    }
+  
+    .checkout-container a {
+      font-size: 1.6rem; /* Enlace más grande */
+    }
+  }
+  
+  /* Para pantallas de 1200px o más (Desktop en pantallas grandes) */
+  @media (min-width: 1200px) {
+    .checkout-container {
+      max-width: 900px; /* Tamaño aún mayor */
+      padding: 5rem; /* Más relleno */
+    }
+  
+    .checkout-container h1 {
+      font-size: 4rem; /* Título muy grande */
+    }
+  
+    .checkout-container p {
+      font-size: 1.8rem; /* Texto aún más grande */
+    }
+  
+    .checkout-container a {
+      font-size: 1.8rem; /* Enlace aún más grande */
+    }
+  }
+  

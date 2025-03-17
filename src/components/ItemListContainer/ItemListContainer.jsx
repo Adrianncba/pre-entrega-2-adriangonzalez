@@ -1,21 +1,29 @@
 import './ItemListContainer.css';
-import { getProducts, getCategorById } from '../../asynMock';
+
 import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from "../../firebase/data.js";
 
 function ItemListContainer() {
+    
     const [products, setProducts] = useState([]);
     const { categoryId } = useParams();
+
     useEffect(() => {
-        const asynFun = categoryId ? getCategorById : getProducts;
-        asynFun(categoryId)
+        const productosRef = collection(db, "products");
+        const q = categoryId ? query(productosRef, where("category", "==", categoryId)) : productosRef;
+
+        getDocs(q)
             .then((resp) => {
-                setProducts(resp)
+                setProducts(
+                    resp.docs.map((doc) => {
+                        return { id: doc.id, ...doc.data() }
+                    })
+                )
             })
-            .catch((err) => {
-                console.log("Error en la carga de datos con categoria")
-            })
+
     }, [categoryId])
 
     return (

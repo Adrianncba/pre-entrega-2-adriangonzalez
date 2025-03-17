@@ -17,8 +17,7 @@
 /* Media Query para escritorio (pantallas mayores a 1024px) */
 @media (min-width: 1025px) {
   .navbar {
-    position: fixed; /* Fijo solo en pantallas grandes */
-    padding: 20px 40px; /* Mantener un padding más grande en escritorio */
+     /* Fijo solo en pantallas grandes */
   }
 
   .navbar .brand-title {
@@ -34,7 +33,7 @@
 .navbar .brand-title {
   color: #fff; /* Título en blanco */
   font-size: 28px;
-  font-family: 'Arial', sans-serif;
+  font-family: Roboto;
   text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; /* Efecto neón rojo */
   margin: 0;
   text-decoration: none; /* Para quitar el subrayado del Link */
@@ -62,7 +61,7 @@
   color: #ccc; /* Texto gris suave */
   font-size: 2rem;
   text-transform: uppercase;
-  font-family: 'Arial', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-decoration: none;
   position: relative;
   padding: 5px 0;

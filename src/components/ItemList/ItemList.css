@@ -1,62 +1,65 @@
-/* Estilo para cada producto */
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
 .item {
-    background-color: #1f1f1f;
-    color: #fff;
-    width: 200px; /* Tamaño fijo para cada item */
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+  text-align: center;
+}
+
+.item-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+.item h2 {
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 0 0 5px #ff0000;
+}
+
+.item a {
+  color: #ff0000;
+  font-size: 1.1rem;
+  text-decoration: none;
+  margin-top: 1rem;
+  text-shadow: 0 0 5px #ff0000;
+}
+
+@media (min-width: 600px) {
+  .item-list {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .item:hover {
-    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
-    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.7); /* Sombra neón roja */
+
+  .item h2 {
+    font-size: 1.8rem;
   }
-  
-  .item-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+}
+
+@media (min-width: 900px) {
+  .item-list {
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  h2 {
-    text-align: center;
-    font-size: 18px;
-    color: #fff;
-    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; /* Efecto neón rojo */
-    margin: 10px 0;
+
+  .item h2 {
+    font-size: 2rem;
   }
-  
-  .item a {
-    text-align: center;
-    display: block;
-    background-color: #ff0000; /* Fondo rojo */
-    color: #fff;
-    padding: 10px 0;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 10px;
-    transition: background-color 0.3s ease;
+}
+
+@media (min-width: 1200px) {
+  .item-list {
+    grid-template-columns: repeat(4, 1fr);
   }
-  
-  .item a:hover {
-    background-color: #cc0000; /* Fondo más oscuro en hover */
+
+  .item h2 {
+    font-size: 2.2rem;
   }
-  
-  @media (max-width: 600px) {
-    .item {
-      width: 90%; /* Hacer los items más grandes en pantallas móviles */
-    }
-  }
-  
-  @media (min-width: 1025px) {
-    .item {
-      width: 220px; /* Hacer los items un poco más grandes en escritorio */
-    }
-  }
-  
+}

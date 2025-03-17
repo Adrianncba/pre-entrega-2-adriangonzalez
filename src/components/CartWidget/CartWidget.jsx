@@ -1,10 +1,17 @@
+import { useContext } from 'react';
 import './CartWidget.css';
+import { CartContext } from '../../context/CartContext';
 
 function CartWidget() {
+
+    const { cantidadEnCarrito } = useContext(CartContext);
+
     return (
         <div className="cart-widget">
-            <img src="https://www.svgrepo.com/show/415705/cart-checkout-ecommerce-2.svg" alt="cart" />
-            <p><span>0</span></p>
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FA5252/shopping-cart--v1.png" alt="shopping-cart--v1" />
+             <p>
+                <span>{cantidadEnCarrito}</span>
+             </p>
         </div>
     );
 }

@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 import logo from '../../assets/logo-proyecto.png'
-
-
-
+import CartWidget from '../CartWidget/CartWidget';
 
 const Navbar = () => {
+
+
 
   return (
     <div className="navbar">
@@ -15,18 +14,18 @@ const Navbar = () => {
       <Link className='brand-title' to="/">
         <img src={logo} alt="" />
       </Link>
-    
-      <div className="links">
 
+      <div className="links">
+        <NavLink to={`/nosotros`}>Nosotros</NavLink>
         <NavLink to={`/category/computadoras`}>Computadoras</NavLink>
         <NavLink to={`/category/perifericos`}>Perifericos</NavLink>
         <NavLink to={`/category/monitores`}>Monitores</NavLink>
         <NavLink to={`/category/sillas`}>Sillas</NavLink>
       </div>
-
-      <div className="cart-widget">
-        <CartWidget />
+      <div>
+        <NavLink to={`/cart`}><CartWidget /></NavLink>
       </div>
+
     </div>
   );
 };

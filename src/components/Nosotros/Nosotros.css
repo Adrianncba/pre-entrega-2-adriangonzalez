@@ -1,0 +1,87 @@
+/* Contenedor principal */
+.nosotros-container {
+    padding: 3rem 1.5rem;
+    background-color: #111;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Sección de contenido */
+  .nosotros-section {
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+
+    padding: 7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 4rem;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /* Imagen dentro de cada sección */
+  .nosotros-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Estilos para el texto */
+  .nosotros-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .nosotros-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px #ff0000;
+  }
+  
+  .nosotros-description {
+    font-size: 1.4rem;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    text-shadow: 0 0 10px #ff0000;
+  }
+  
+  /* Invertir el orden de la imagen y el texto en algunas secciones */
+  .nosotros-section.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  /* Estilos para pantallas pequeñas */
+  @media (max-width: 900px) {
+    .nosotros-section {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  
+    .nosotros-title {
+      font-size: 2rem;
+    }
+  
+    .nosotros-description {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .nosotros-title {
+      font-size: 1.7rem;
+    }
+  
+    .nosotros-description {
+      font-size: 1rem;
+    }
+  }
+  
